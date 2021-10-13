@@ -171,9 +171,9 @@ void CLeapControllerIndex::ActivateInternal()
     vr::VRProperties()->SetBoolProperty(m_propertyContainer, vr::Prop_HasCameraComponent_Bool, false);
     vr::VRProperties()->SetBoolProperty(m_propertyContainer, vr::Prop_HasDriverDirectModeComponent_Bool, false);
     vr::VRProperties()->SetBoolProperty(m_propertyContainer, vr::Prop_HasVirtualDisplayComponent_Bool, false);
-    vr::VRProperties()->SetInt32Property(m_propertyContainer, vr::Prop_ControllerHandSelectionPriority_Int32, 0);
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_ModelNumber_String, (m_hand == CH_Left) ? "Knuckles Left" : "Knuckles Right");
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_RenderModelName_String, (m_hand == CH_Left) ? "{indexcontroller}valve_controller_knu_1_0_left" : "{indexcontroller}valve_controller_knu_1_0_right");
+    vr::VRProperties()->SetInt32Property(m_propertyContainer, vr::Prop_ControllerHandSelectionPriority_Int32, -10);
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_ModelNumber_String, (m_hand == CH_Left) ? "Leap Left" : "Leap Right");
+    //vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_RenderModelName_String, (m_hand == CH_Left) ? "{leap}valve_controller_knu_1_0_left" : "{leap}valve_controller_knu_1_0_right");
     vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_ManufacturerName_String, "Valve");
     vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_TrackingFirmwareVersion_String, "1562916277 watchman@ValveBuilder02 2019-07-12 FPGA 538(2.26/10/2) BL 0 VRC 1562916277 Radio 1562882729");
     vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_HardwareRevision_String, "product 17 rev 14.1.9 lot 2019/4/20 0");
@@ -185,18 +185,18 @@ void CLeapControllerIndex::ActivateInternal()
     vr::VRProperties()->SetUint64Property(m_propertyContainer, vr::Prop_RadioVersion_Uint64, 1562882729U);
     vr::VRProperties()->SetUint64Property(m_propertyContainer, vr::Prop_DongleVersion_Uint64, 1558748372U);
     vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_Firmware_ProgrammingTarget_String, (m_hand == CH_Left) ? "LHR-E217CD00" : "LHR-E217CD01"); // Changed
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_ResourceRoot_String, "indexcontroller");
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_ResourceRoot_String, "leap");
     vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_RegisteredDeviceType_String, (m_hand == CH_Left) ? "valve/index_controllerLHR-E217CD00" : "valve/index_controllerLHR-E217CD01"); // Changed
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_InputProfilePath_String, "{indexcontroller}/input/index_controller_profile.json");
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_InputProfilePath_String, "{leap}/input/index_controller_profile.json");
     vr::VRProperties()->SetInt32Property(m_propertyContainer, vr::Prop_Axis2Type_Int32, vr::k_eControllerAxis_Trigger);
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceOff_String, (m_hand == CH_Left) ? "{indexcontroller}/icons/left_controller_status_off.png" : "{indexcontroller}/icons/right_controller_status_off.png");
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceSearching_String, (m_hand == CH_Left) ? "{indexcontroller}/icons/left_controller_status_searching.gif" : "{indexcontroller}/icons/right_controller_status_searching.gif");
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceSearchingAlert_String, (m_hand == CH_Left) ? "{indexcontroller}/icons/left_controller_status_searching_alert.gif" : "{indexcontroller}/icons//right_controller_status_searching_alert.gif");
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceReady_String, (m_hand == CH_Left) ? "{indexcontroller}/icons/left_controller_status_ready.png" : "{indexcontroller}/icons//right_controller_status_ready.png");
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceReadyAlert_String, (m_hand == CH_Left) ? "{indexcontroller}/icons/left_controller_status_ready_alert.png" : "{indexcontroller}/icons//right_controller_status_ready_alert.png");
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceNotReady_String, (m_hand == CH_Left) ? "{indexcontroller}/icons/left_controller_status_error.png" : "{indexcontroller}/icons//right_controller_status_error.png");
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceStandby_String, (m_hand == CH_Left) ? "{indexcontroller}/icons/left_controller_status_off.png" : "{indexcontroller}/icons//right_controller_status_off.png");
-    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceAlertLow_String, (m_hand == CH_Left) ? "{indexcontroller}/icons/left_controller_status_ready_low.png" : "{indexcontroller}/icons//right_controller_status_ready_low.png");
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceOff_String, (m_hand == CH_Left) ? "{leap}/icons/left_controller_status_off.png" : "{leap}/icons/right_controller_status_off.png");
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceSearching_String, (m_hand == CH_Left) ? "{leap}/icons/left_controller_status_searching.gif" : "{leap}/icons/right_controller_status_searching.gif");
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceSearchingAlert_String, (m_hand == CH_Left) ? "{leap}/icons/left_controller_status_searching_alert.gif" : "{leap}/icons//right_controller_status_searching_alert.gif");
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceReady_String, (m_hand == CH_Left) ? "{leap}/icons/left_controller_status_ready.png" : "{leap}/icons//right_controller_status_ready.png");
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceReadyAlert_String, (m_hand == CH_Left) ? "{leap}/icons/left_controller_status_ready_alert.png" : "{leap}/icons//right_controller_status_ready_alert.png");
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceNotReady_String, (m_hand == CH_Left) ? "{leap}/icons/left_controller_status_error.png" : "{leap}/icons//right_controller_status_error.png");
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceStandby_String, (m_hand == CH_Left) ? "{leap}/icons/left_controller_status_off.png" : "{leap}/icons//right_controller_status_off.png");
+    vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_NamedIconPathDeviceAlertLow_String, (m_hand == CH_Left) ? "{leap}/icons/left_controller_status_ready_low.png" : "{leap}/icons//right_controller_status_ready_low.png");
     vr::VRProperties()->SetStringProperty(m_propertyContainer, vr::Prop_ControllerType_String, "knuckles");
 
     // Input
@@ -332,41 +332,254 @@ void CLeapControllerIndex::UpdateGestures(const LEAP_HAND *f_hand, const LEAP_HA
         m_buttons[IB_FingerRing]->SetValue(l_gestures[CGestureMatcher::HG_RingBend]);
         m_buttons[IB_FingerPinky]->SetValue(l_gestures[CGestureMatcher::HG_PinkyBend]);
 
+        const glm::quat rotateHalfPiZ(0.70106769f, 0.f, 0.f, 0.70106769f);
+        const glm::quat rotateHalfPiX(0.70106769f, 0.70106769f, 0.f, 0.f);
+        const glm::quat rotateHalfPiY(0.70106769f, 0.f, 0.70106769f, 0.f);
+        const glm::quat rotateQuarterPiY(0.9238795f, 0.f, -0.3826834f, 0.f);
+
+        LEAP_QUATERNION palmOrient_leap = f_hand->palm.orientation;
+        glm::quat palmRotation;
+        ConvertQuaternion(palmOrient_leap, palmRotation);
+        const glm::quat palmRotationInv = glm::inverse(palmRotation);
+
+        // Reset all points for good measure
+        for (size_t i = 0; i < 31; i++)
+        {
+            m_boneTransform[i].position = { 0.0, 0.0, 0.0, 1.0 };
+            m_boneTransform[i].orientation = { 1.0, 0.0, 0.0, 0.0 };
+        }
+
+        /*m_boneTransform[HSB_Wrist].position.v[0] = 0.0;
+        m_boneTransform[HSB_Wrist].position.v[1] = 0.0;
+        m_boneTransform[HSB_Wrist].position.v[2] = -0.03;
+        m_boneTransform[HSB_Wrist].position.v[3] = 1.0;*/
+
+        glm::quat wrist_rot = rotateHalfPiZ * rotateHalfPiZ * rotateHalfPiZ * rotateHalfPiX * rotateHalfPiX;
+        if (m_hand == CH_Left)
+            wrist_rot = wrist_rot * rotateHalfPiZ * rotateHalfPiZ;
+        ConvertQuaternion(wrist_rot, m_boneTransform[HSB_Wrist].orientation);
+
+        LEAP_VECTOR leap_ring0 = f_hand->digits[HF_Ring].bones[0].prev_joint;
+        LEAP_VECTOR leap_ring1 = f_hand->digits[HF_Ring].bones[1].prev_joint;
+        LEAP_VECTOR leap_middle0 = f_hand->digits[HF_Middle].bones[0].prev_joint;
+        LEAP_VECTOR leap_middle1 = f_hand->digits[HF_Middle].bones[1].prev_joint;
+        LEAP_VECTOR leap_wrist = f_hand->arm.next_joint;
+        glm::vec3 unrotateXBasis, unrotateYBasis, unrotateZBasis;
+        glm::vec3 _ring0(leap_ring0.x, -leap_ring0.y, leap_ring0.z);
+        glm::vec3 _ring1(leap_ring1.x, -leap_ring1.y, leap_ring1.z);
+        glm::vec3 _middle0(leap_middle0.x, -leap_middle0.y, leap_middle0.z);
+        glm::vec3 _middle1(leap_middle1.x, -leap_middle1.y, leap_middle1.z);
+        glm::vec3 _wrist(leap_wrist.x, -leap_wrist.y, leap_wrist.z);
+        glm::mat3 unrotateTransform, unrotateTransformInv;
+
+        glm::vec3 _zbasis_midpoint = (_middle1 + _ring1);
+        _zbasis_midpoint /= 2;
+
+        unrotateYBasis = _ring0 - _middle0;
+        unrotateYBasis /= glm::length(unrotateYBasis);
+        //unrotateZBasis = _middle0 - _middle1;
+        unrotateZBasis = _wrist - _zbasis_midpoint;
+        
+        unrotateXBasis = glm::cross(unrotateZBasis, unrotateYBasis);
+        unrotateXBasis /= glm::length(unrotateXBasis);
+        unrotateZBasis = glm::cross(unrotateXBasis, unrotateYBasis);
+
+        unrotateTransform[0] = unrotateXBasis;
+        unrotateTransform[1] = unrotateYBasis;
+        unrotateTransform[2] = -unrotateZBasis;
+        unrotateTransformInv = glm::inverse(unrotateTransform);
+
+        glm::vec3 unrotateTranslate = _wrist * unrotateTransformInv;
+
         for(size_t i = 0U; i < 5U; i++)
         {
             const LEAP_DIGIT &l_finger = f_hand->digits[i];
             size_t l_transformIndex = GetFingerBoneIndex(i);
-            if(l_transformIndex != HSB_Thumb0) l_transformIndex++;
+            
 
             LEAP_QUATERNION l_leapRotation = f_hand->palm.orientation;
-            glm::quat l_segmentRotation;
-            ConvertQuaternion(l_leapRotation, l_segmentRotation);
 
-            for(size_t j = 1U; j < 4U; j++)
+            const glm::quat reverseRotation(0.f, 0.f, 0.70106769f, -0.70106769f);
+            glm::quat l_segmentRotation (l_leapRotation.w, l_leapRotation.x, l_leapRotation.y, l_leapRotation.z);
+            
+            LEAP_VECTOR l_boneRoot = f_hand->arm.next_joint;
+            glm::vec3 l_position(l_boneRoot.x * -0.001, l_boneRoot.y * -0.001, -l_boneRoot.z * -0.001);
+            glm::quat l_rotation;
+            ConvertQuaternion(l_leapRotation, l_rotation);
+            l_rotation *= wrist_rot;
+            l_segmentRotation *= wrist_rot * rotateHalfPiX * rotateHalfPiX * rotateHalfPiX;
+
+            glm::vec3 l_position_prev = l_position;
+            glm::vec3 l_root = l_position;
+            glm::quat l_rootRot = l_rotation;
+            glm::quat l_rootRotInv = glm::inverse(l_rootRot);
+
+            for(size_t j = 0U; j < 4U; j++)
             {
-                const glm::quat l_prevSegmentRotationInv = glm::inverse(l_segmentRotation);
+                if (j == 0 && GetFingerBoneIndex(i) == HSB_Thumb0) continue;
+                glm::quat l_prevSegmentRotation = l_segmentRotation;
+                glm::quat l_prevSegmentRotationInv = glm::inverse(l_segmentRotation);
                 l_leapRotation = l_finger.bones[j].rotation;
                 ConvertQuaternion(l_leapRotation, l_segmentRotation);
 
                 glm::quat l_segmentResult = l_prevSegmentRotationInv*l_segmentRotation;
-                ChangeBoneOrientation(l_segmentResult);
-                if(l_transformIndex == HSB_Thumb0)
+
+                if (!(j == 0 || l_transformIndex == HSB_Thumb0)) //
+                    ChangeBoneOrientation(l_segmentResult);
+
+                if (l_transformIndex == HSB_Thumb0)
                 {
-                    std::swap(l_segmentResult.z, l_segmentResult.w);
-                    l_segmentResult.w *= -1.f;
-                    if(m_hand == CH_Right)
+
+                    if (m_hand == CH_Left) {
+                        l_segmentResult.z *= -1;
+                        l_segmentResult.x *= -1;
+                        std::swap(l_segmentResult.x, l_segmentResult.z);
+
+                        l_segmentResult *= rotateHalfPiY * rotateHalfPiY * rotateHalfPiZ * rotateHalfPiX;
+                        l_segmentResult *= rotateHalfPiX * rotateHalfPiY;// *rotateHalfPiX;
+                        //l_segmentResult.x *= -1;
+                        l_segmentResult.z *= -1;
+                        //l_segmentResult.y *= -1;
+                    }
+                    else
                     {
-                        std::swap(l_segmentResult.x, l_segmentResult.w);
-                        l_segmentResult.w *= -1.f;
-                        std::swap(l_segmentResult.y, l_segmentResult.z);
-                        l_segmentResult.y *= -1.f;
+                        ChangeBoneOrientation(l_segmentResult);
+                        
+                        // Helpers for figuring out rotation issues
+                        static int throttle = 0;
+                        static int test = 2;
+                        static int test2 = 2;
+                        static int test3 = 1;
+
+                        l_segmentResult *= rotateHalfPiX * rotateHalfPiX * rotateHalfPiY * rotateHalfPiY * rotateHalfPiZ * rotateQuarterPiY;
+
+                        for (int k = 0; k < test; k++)
+                        {
+                            //l_segmentResult *= rotateHalfPiY;
+                        }
+                        for (int k = 0; k < test2; k++)
+                        {
+                            //l_segmentResult *= rotateHalfPiY;
+                        }
+                        for (int k = 0; k < test3; k++)
+                        {
+                            //l_segmentResult *= rotateHalfPiZ;
+                        }
+
+                        throttle++;
+                        //if (throttle == 90*5)
+                            test++;
+                        if (test == 4)
+                            test2++;
+                        if (test2 == 4)
+                            test3++;
+                        test3 = test3 % 4;
+                        test = test % 4;
+                        test2 = test2 % 4;
+                        throttle = throttle % (90 * 5);
+                        //l_segmentResult *= rotateHalfPiX * rotateHalfPiZ * rotateHalfPiZ * rotateHalfPiZ;// *rotateHalfPiX;
+                        //l_segmentResult.x *= -1;
+                        l_segmentResult.z *= -1;
+                        //l_segmentResult.y *= -1;
                     }
                 }
-                ConvertQuaternion(l_segmentResult, m_boneTransform[l_transformIndex].orientation);
+
+                if (m_hand == CH_Left && (j == 0 || l_transformIndex == HSB_Thumb0))
+                {
+                    l_segmentResult *= rotateHalfPiZ * rotateHalfPiZ * rotateHalfPiY * rotateHalfPiY;
+                }
+
+                // TODO the right hand thumb is still weird
+                if (m_hand == CH_Right && GetFingerBoneIndex(i) == HSB_Thumb0 && l_transformIndex != HSB_Thumb0)
+                {
+                    //l_segmentResult.z *= -1;
+                    //l_segmentResult.x *= -1;
+                    //l_segmentResult.z *= -1;
+                    l_segmentResult.y *= -1;
+                    //std::swap(l_segmentResult.x, l_segmentResult.z);
+                }
+
+                // TODO I don't really use all of this
+
+                l_position = glm::vec3(l_finger.bones[j].prev_joint.x * -0.001, l_finger.bones[j].prev_joint.y * -0.001, -l_finger.bones[j].prev_joint.z * -0.001);
+
+                glm::mat4 joint_transform = glm::translate(g_identityMatrix, l_position);
+                
+                joint_transform *= glm::translate(g_identityMatrix, -l_position_prev);
+
+                l_position_prev = l_position;
+                l_position = joint_transform * g_zeroPoint;
+
+                l_boneRoot = l_finger.bones[j].prev_joint;
+
+                const double l_knuckleWidth = (f_hand->palm.width * 0.001) / 5.0;
+
+// Fixed index 0, not using the actual data at all 
+#if 1
+                // How much to shift each finger inwards
+                const double rootDepthShift[5] = { 0.02, 0.005, 0.01, 0.012, 0.007 };
+                if (l_transformIndex == HSB_Thumb0)
+                {
+                    m_boneTransform[l_transformIndex].position.v[1] = -(l_knuckleWidth * 2.5) + ((4) * l_knuckleWidth) + (l_knuckleWidth * 0.5);//l_position.x;
+                    m_boneTransform[l_transformIndex].position.v[0] = (m_hand == CH_Left) ? -0.025 : 0.025;//l_position.y;
+                    m_boneTransform[l_transformIndex].position.v[2] = rootDepthShift[i];//l_position.z;
+                    m_boneTransform[l_transformIndex].position.v[3] = 1.0;
+
+                    ConvertQuaternion(l_segmentResult, m_boneTransform[l_transformIndex].orientation);
+                }
+                else if (j == 0 || l_transformIndex == HSB_Thumb0)
+                {
+                    m_boneTransform[l_transformIndex].position.v[1] = -(l_knuckleWidth * 2.5) + ((4-(i-1)) * l_knuckleWidth);//l_position.x;
+                    m_boneTransform[l_transformIndex].position.v[0] = 0.0;//l_position.y;
+                    m_boneTransform[l_transformIndex].position.v[2] = rootDepthShift[i];//l_position.z;
+                    m_boneTransform[l_transformIndex].position.v[3] = 1.0;
+
+                    ConvertQuaternion(l_segmentResult, m_boneTransform[l_transformIndex].orientation);
+                }
+#endif
+
+// Dynamic index 0, attempt to use LeapC's bone[0] joints
+#if 0
+                if (j == 0 || l_transformIndex == HSB_Thumb0)
+                {
+                    l_position = glm::vec3(l_finger.bones[j].prev_joint.x, -l_finger.bones[j].prev_joint.y, l_finger.bones[j].prev_joint.z);
+                    l_position = l_position * unrotateTransformInv;
+                    l_position -= unrotateTranslate;
+                    l_position *= -0.001;
+                    //l_position.z *= -1.0;
+
+                    m_boneTransform[l_transformIndex].position.v[0] = -l_position.x;
+                    m_boneTransform[l_transformIndex].position.v[1] = l_position.y;//l_position.y;
+                    m_boneTransform[l_transformIndex].position.v[2] = l_position.z;
+                    m_boneTransform[l_transformIndex].position.v[3] = 1.0;
+
+                    ConvertQuaternion(l_segmentResult, m_boneTransform[l_transformIndex].orientation);
+                }
+#endif
+                else
+                {
+                    m_boneTransform[l_transformIndex].position.v[2] = 0.0;
+                    m_boneTransform[l_transformIndex].position.v[1] = 0.0;
+                    m_boneTransform[l_transformIndex].position.v[0] = (m_hand == CH_Left) ? glm::length(l_position) : -glm::length(l_position);
+                    m_boneTransform[l_transformIndex].position.v[3] = 1.0;
+
+                    ConvertQuaternion(l_segmentResult, m_boneTransform[l_transformIndex].orientation);
+                }
+
+                
                 l_transformIndex++;
             }
+
+            l_position = glm::vec3(l_finger.bones[3].next_joint.x * -0.001, l_finger.bones[3].next_joint.y * -0.001, -l_finger.bones[3].next_joint.z * -0.001);
+
+            m_boneTransform[l_transformIndex].position.v[2] = 0.0;//l_position.x;
+            m_boneTransform[l_transformIndex].position.v[1] = 0.0;//l_position.y;
+            m_boneTransform[l_transformIndex].position.v[0] = (m_hand == CH_Left)  ? glm::length(l_position - l_position_prev) : -glm::length(l_position - l_position_prev);//l_position.z;
+            m_boneTransform[l_transformIndex].position.v[3] = 1.0;
+
         }
 
+#if 1
         // Update aux bones
         glm::vec3 l_position;
         glm::quat l_rotation;
@@ -386,10 +599,16 @@ void CLeapControllerIndex::UpdateGestures(const LEAP_HAND *f_hand, const LEAP_HA
             }
             l_position = l_chainMat*g_zeroPoint;
             l_rotation = glm::quat_cast(l_chainMat);
-            if(m_hand == CH_Left) ChangeAuxTransformation(l_position, l_rotation);
+            //if(m_hand == CH_Left) ChangeAuxTransformation(l_position, l_rotation);
+            if (m_hand == CH_Left)
+            {
+                l_rotation *= rotateHalfPiZ * rotateHalfPiZ * rotateHalfPiY * rotateHalfPiY;
+            }
+
             ConvertVector3(l_position, m_boneTransform[HSB_Aux_Thumb + i].position);
             ConvertQuaternion(l_rotation, m_boneTransform[HSB_Aux_Thumb + i].orientation);
         }
+#endif
     }
 }
 

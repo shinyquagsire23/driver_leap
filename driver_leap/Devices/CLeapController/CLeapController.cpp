@@ -8,6 +8,7 @@
 
 const glm::quat g_reverseRotation(0.f, 0.f, 0.70106769f, -0.70106769f);
 const glm::quat g_rotateHalfPiZ(0.70106769f, 0.f, 0.f, 0.70106769f);
+const glm::quat g_rotateHalfPiY(0.70106769f, 0.f, 0.70106769f, 0.0f);
 const glm::quat g_rotateHalfPiZN(0.70106769f, 0.f, 0.f, -0.70106769f);
 const vr::HmdQuaternion_t g_vrZeroRotation = { 1.0, .0, .0, .0 };
 
@@ -162,6 +163,7 @@ void CLeapController::UpdateTransformation(const LEAP_HAND *f_hand)
         std::memcpy(m_pose.vecWorldFromDriverTranslation, ms_headPosition, sizeof(double) * 3U);
 
         const LEAP_VECTOR l_palmPosition = f_hand->palm.position;
+        const LEAP_VECTOR l_wristPosition = f_hand->arm.next_joint;
         const LEAP_QUATERNION l_palmOrientation = f_hand->palm.orientation;
 
         switch(CDriverConfig::GetOrientationMode())
@@ -171,9 +173,9 @@ void CLeapController::UpdateTransformation(const LEAP_HAND *f_hand)
                 std::memcpy(&m_pose.qWorldFromDriverRotation, &ms_headRotation, sizeof(vr::HmdQuaternion_t));
 
                 const glm::vec3 &l_handOffset = ((m_hand == CH_Left) ? CDriverConfig::GetLeftHandOffset() : CDriverConfig::GetRightHandOffset());
-                m_pose.vecPosition[0] = -0.001f*l_palmPosition.x + l_handOffset.x;
-                m_pose.vecPosition[1] = -0.001f*l_palmPosition.z + l_handOffset.y;
-                m_pose.vecPosition[2] = -0.001f*l_palmPosition.y + l_handOffset.z;
+                m_pose.vecPosition[0] = -0.001f* l_wristPosition.x + l_handOffset.x;
+                m_pose.vecPosition[1] = -0.001f* l_wristPosition.z + l_handOffset.y;
+                m_pose.vecPosition[2] = -0.001f* l_wristPosition.y + l_handOffset.z;
 
                 if(CDriverConfig::IsVelocityUsed())
                 {
@@ -188,7 +190,14 @@ void CLeapController::UpdateTransformation(const LEAP_HAND *f_hand)
 
                 glm::quat l_rotation(l_palmOrientation.w, l_palmOrientation.x, l_palmOrientation.y, l_palmOrientation.z);
                 l_rotation = g_reverseRotation*l_rotation;
-                l_rotation *= ((m_hand == CH_Left) ? g_rotateHalfPiZN : g_rotateHalfPiZ);
+                //l_rotation *= ((m_hand == CH_Left) ? g_rotateHalfPiZN : g_rotateHalfPiZ);
+                //l_rotation *= ((m_hand == CH_Left) ? g_rotateHalfPiZN : g_rotateHalfPiZ);
+
+                if (m_hand == CH_Left) {
+                    //l_rotation *= g_rotateHalfPiY;
+                    //l_rotation *= g_rotateHalfPiY;
+                }
+
                 l_rotation *= ((m_hand == CH_Left) ? CDriverConfig::GetLeftHandOffsetRotation() : CDriverConfig::GetRightHandOffsetRotation());
 
                 m_pose.qRotation.x = l_rotation.x;

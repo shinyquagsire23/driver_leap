@@ -22,7 +22,9 @@ void CGestureMatcher::GetGestures(const LEAP_HAND *f_hand, std::vector<float> &f
             const LEAP_BONE &l_bone = l_finger.bones[j];
             glm::vec3 l_direction(l_bone.next_joint.x - l_bone.prev_joint.x, l_bone.next_joint.y - l_bone.prev_joint.y, l_bone.next_joint.z - l_bone.prev_joint.z);
             l_direction = glm::normalize(l_direction);
-            if(j > 0) l_fingerBend[i] += glm::acos(glm::dot(l_direction, l_prevDirection));
+            if (j > 0) {
+                l_fingerBend[i] += glm::acos(glm::dot(l_direction, l_prevDirection));
+            }
             l_prevDirection = l_direction;
         }
     }
