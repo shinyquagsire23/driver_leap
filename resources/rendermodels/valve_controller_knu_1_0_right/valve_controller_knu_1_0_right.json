@@ -1,0 +1,47 @@
+{
+    "thumbnail" : "valve_controller_knu_1_0_right_thumbnail.png",
+    "components": {
+        "tip": {
+            "component_local" : {
+                "origin": [0.0, 0.0, -0.19],
+                "rotate_xyz" : [0.0, 0.0, 0.0]
+            }
+        },
+        "base": {
+            "component_local" : {
+                "origin": [0.0, 0.0, 0.0],
+                "rotate_xyz" : [0.0, 0.0, 0.0]
+            }
+        },
+        "gdc2015": {
+            "component_local" : {
+                "origin": [0.0, 0.0, 0.0],
+                "rotate_xyz" : [0.0, 0.0, 0.0]
+            }
+        },
+        "handgrip": {
+            "component_local" : {
+                "origin": [0.0, 0.0, -0.10],
+                "rotate_xyz" : [0.0, 0.0, 0.0]
+             }
+        },
+        "grip": {
+            "component_local" : {
+                "origin": [0.0, 0.0, -0.10],
+                "rotate_xyz" : [0.0, 0.0, 0.0]
+             }
+        },
+        "openxr_handmodel": {
+            "component_local" : {
+                "origin": [0.0, 0.0, 0.0],
+                "rotate_xyz" : [0.0, 0.0, 0.0]
+            }
+        },
+        "squeeze": {
+         "component_local" : {
+                "origin": [0.0, 0.0, -0.10],
+                "rotate_xyz" : [0.0, 0.0, 0.0]
+             }
+        }
+    }
+}
