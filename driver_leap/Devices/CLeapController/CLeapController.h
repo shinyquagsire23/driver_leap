@@ -6,6 +6,7 @@ class CLeapController : public vr::ITrackedDeviceServerDriver
 {
     static double ms_headPosition[3U];
     static vr::HmdQuaternion_t ms_headRotation;
+    static glm::mat4 ms_world_transform;
     
     vr::DriverPose_t m_pose;
 
@@ -61,8 +62,10 @@ protected:
     unsigned char m_hand;
     unsigned char m_type;
     std::vector<CControllerButton*> m_buttons;
+    bool m_isEnabled;
 
     virtual void ActivateInternal();
     virtual void UpdateGestures(const LEAP_HAND *f_hand, const LEAP_HAND *f_oppHand);
     virtual void UpdateInputInternal();
+    virtual void UpdateInputInterop();
 };
